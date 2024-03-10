@@ -3,7 +3,7 @@ import '../../Building.css';
 import * as GraphQL from '../../GraphQL';
 import {useHistory} from 'react-router-dom';
  
-//import Navigation from '../../Navigation';
+import Navigation from '../../Navigation';
 import image2 from '../../Assets/images/Cold_Space_Icon_gray.png';
 import image1 from '../../Assets/images/Hot_Space_Icon_gray.png';
 import image3 from '../../Assets/images/Water_Drop_Grey.png';
@@ -41,10 +41,11 @@ function Building() {
  
   return (
  <div  >
-  {/* <div>
+  <div>
   <Navigation />
-  </div> */}
+  </div>
   <h2 className="sai">All Buildings</h2>
+  <div className="horizontal-line1"></div>
      
     <div className="container" style={{'margin-top':'-40px'}}>
       {siteData &&

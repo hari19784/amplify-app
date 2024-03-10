@@ -4,6 +4,7 @@ import { getEquipment, getSites } from './graphql/queries';
 import {useHistory} from 'react-router-dom';
 import { API, graphqlOperation } from 'aws-amplify';
 import './NativeCloudBMS.css';
+import Navigation from './Navigation';
  
 // const client = generateClient();
  
@@ -45,17 +46,16 @@ const handleGoBack=()=>{
  
     <div >
        
-     {/* <Navigation/> */}
+     <Navigation/>
        
       <div className="GraphQL">
-      {/* <div className="horizontal-line1"></div> */}
+      <div className="horizontal-line1"></div>
       <div style={{position:'absolute',top:'60px',right:'20px'}}>
-        <button onClick={handleGoBack} style={{background:'#61ae34',color:'white', cursor:'pointer', 'border':'none', 'height':'25px'}}>Go back</button>
+        <button onClick={handleGoBack} style={{background:'#61ae34',color:'white', cursor:'pointer',border: 'none',"margin-top":'10px'}}>Go back</button>
       </div>
-      <br/>
-      <h2 className="sai">Equipment Summary</h2>
+      <h2 className="sai">Your Data</h2>
       {data?.length > 0 ? (
-        <table cellspacing="0" cellpadding="0" style={{"padding": "10px", 'margin-left': '140px'}}>
+        <table className="kiran"  cellspacing="0" cellpadding="0">
           <thead className="table-Style">
             <tr>
             <th className="th-Style">Name</th>

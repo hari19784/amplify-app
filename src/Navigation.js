@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { generateClient } from "@aws-amplify/api";
+// import { generateClient } from "@aws-amplify/api";
 import { getSites } from "./graphql/queries";
 // import "./Building.css";
 import image11 from "./Assets/images/building.png";
@@ -11,8 +11,9 @@ import image15 from "./Assets/images/airhandler1.svg";
 import image16 from "./Assets/images/generic1.svg";
 import image17 from "./Assets/images/system1.svg";
 import { useHistory ,useLocation} from "react-router-dom";
+import { API, graphqlOperation } from 'aws-amplify';
  
-const client = generateClient();
+// const client = generateClient();
  
 const Navigation = () => {
   const [expandedSites, setExpandedSites] = useState([]);
@@ -25,7 +26,7 @@ const Navigation = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.graphql({ query: getSites });
+        const result = await API.graphql(graphqlOperation(getSites));
         setSiteData(result.data.getSites);
       } catch (error) {
         console.error("Error fetching data:", error);
